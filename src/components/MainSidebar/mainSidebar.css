@@ -1,3 +1,18 @@
 .sidebar-main {
     width: 80px;
+    height: 100vh;
+}
+
+.divider-line {
+    width: 100%;
+    border-bottom: solid var(--color-light-darker) 1px;
+}
+
+.icon-active {
+    color: var(--color-light)
+}
+
+
+.icon-inactive {
+    color: var(--color-primary)
 }

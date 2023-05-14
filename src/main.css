@@ -1,0 +1,12 @@
+html {
+    --color-primary: #640dd6;
+    --color-light: #e6e6e6;
+    --color-light-darker: #d6d6d6;
+    --color-secondary: #d60d9a;
+    --color-dark: #242424;
+}
+
+
+.selectable:hover {
+    cursor: pointer;
+}
