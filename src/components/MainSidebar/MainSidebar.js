@@ -4,27 +4,29 @@ import './mainSidebar.css'
 import { SIDEBAR_ROUTES as sidebarRoutes } from '../../lib/enums'
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 
 
 const MainSidebar = () => {
-    const [selected, setSelected] = useState()
     const navigate = useNavigate()
+    const location = useLocation()
+    console.log(location, 'loc CE:TEST');
 
     const renderTooltip = ({ name }) => (
         <Tooltip>{name}</Tooltip>
     );
 
     const renderListItem = ({ name, icon, id, route }) => {
-        const isSelected = selected === id
+        const { pathname } = location
+        const isSelected = pathname === `/${route}`
+        console.log(isSelected, 'selected CE:TEST');
         return (
             <div key={id}>
                 <OverlayTrigger placement="right" overlay={renderTooltip({ name })}>
                     < div
                         className={`selectable py-4 ${isSelected ? 'bg-primary' : ''}`}
                         onClick={() => {
-                            setSelected(id)
                             navigate(`/${route}`)
                         }}
                         title={name}
