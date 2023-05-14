@@ -1,0 +1,10 @@
+.side-bar-container {
+    width: 80px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+.outlet-container {
+    width: auto;
+}

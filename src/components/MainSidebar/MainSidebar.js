@@ -4,30 +4,34 @@ import './mainSidebar.css'
 import { SIDEBAR_ROUTES as sidebarRoutes } from '../../lib/enums'
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
+import { useNavigate } from "react-router-dom";
 
 
 
 const MainSidebar = () => {
     const [selected, setSelected] = useState()
+    const navigate = useNavigate()
 
     const renderTooltip = ({ name }) => (
         <Tooltip>{name}</Tooltip>
     );
 
-    const renderListItem = ({ name, icon, id }) => {
+    const renderListItem = ({ name, icon, id, route }) => {
         const isSelected = selected === id
-        console.log(isSelected, 'is selected CE:TEST');
         return (
             <div key={id}>
                 <OverlayTrigger placement="right" overlay={renderTooltip({ name })}>
                     < div
                         className={`selectable py-4 ${isSelected ? 'bg-primary' : ''}`}
-                        onClick={() => setSelected(id)}
+                        onClick={() => {
+                            setSelected(id)
+                            navigate(`/${route}`)
+                        }}
                         title={name}
                     >
                         <div className="d-flex justify-content-center">
                             <i
-                                className={`${isSelected ? 'icon-active' : 'icon-inactive'} ${icon}`}
+                                className={`${isSelected ? 'icon-active' : 'icon-inactive'} ${icon} router-icon`}
                             />
                         </div>
                     </div>

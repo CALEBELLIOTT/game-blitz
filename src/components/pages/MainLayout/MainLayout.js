@@ -1,11 +1,19 @@
 import { Col, Container, Row } from "react-bootstrap"
+import { Outlet } from "react-router";
 import MainSidebar from "../../MainSidebar/MainSidebar"
+import './MainLayout.css'
 
-const MainLayout = ({ children }) => {
+const MainLayout = (props) => {
+    console.log(props, 'chill');
     return (
-        <>
-            <MainSidebar />
-            {children}
+        <><div className="d-flex">
+            <div className="side-bar-container">
+                <MainSidebar />
+            </div>
+            <div className="outlet-container">
+                <Outlet />
+            </div>
+        </div>
         </>
     )
 }

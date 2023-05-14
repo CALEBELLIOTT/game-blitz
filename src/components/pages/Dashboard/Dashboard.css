@@ -1,0 +1,9 @@
+.color-div {
+    position: absolute;
+    background-color: var(--color-primary);
+    min-width: 100vw;
+    min-height: 160px;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
