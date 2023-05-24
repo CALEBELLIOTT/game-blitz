@@ -7,6 +7,7 @@ import Dashboard from "../components/pages/Dashboard/Dashboard";
 import MainSidebar from "../components/MainSidebar/MainSidebar";
 import MainLayout from "../components/pages/MainLayout/MainLayout";
 import Account from "../components/pages/Account/Account";
+import Stocks from "../components/pages/Stocks/Stocks";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: 'account',
         element: <Account />
+      },
+      {
+        path: 'stocks',
+        element: <Stocks />
       }
     ]
   },

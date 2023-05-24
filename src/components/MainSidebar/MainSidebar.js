@@ -5,6 +5,8 @@ import { SIDEBAR_ROUTES as sidebarRoutes } from '../../lib/enums'
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import { useNavigate, useLocation } from "react-router-dom";
+import React from "react";
+import { Login } from "../Login/Login";
 
 
 
@@ -49,6 +51,7 @@ const MainSidebar = () => {
             <div className="upper-content-container d-flex justify-content-center py-3">
                 <h2 className="mx-auto">
                     C
+                    <Login></Login>
                 </h2>
             </div>
             <div className="divider-line"></div>

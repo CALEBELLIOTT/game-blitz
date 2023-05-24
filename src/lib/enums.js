@@ -10,5 +10,11 @@ export const SIDEBAR_ROUTES = [
         name: 'Account',
         icon: 'bi-person-fill',
         route: 'account'
+    },
+    {
+        id: 'stocks',
+        name: 'Stocks',
+        icon: 'bi-graph-up',
+        route: 'stocks'
     }
 ]
