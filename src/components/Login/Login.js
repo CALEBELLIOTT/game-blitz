@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Col, Form, InputGroup, Modal, Row } from "react-bootstrap";
 import { auth } from "../../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { authService } from "../../services/authService";
 
 
 export const Login = () => {
@@ -9,14 +10,11 @@ export const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
+  const [loginError, setLoginError] = useState('')
 
 
   const login = () => {
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        console.log(userCredential);
-      })
-      .catch(err => { console.log(err.message) })
+    authService.loginWithEmailAndPassword({ email, password })
   }
 
   const renderModalBody = () => {
