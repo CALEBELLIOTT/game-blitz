@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import { Alert, Button, Col, Form, InputGroup, Modal, Row } from "react-bootstrap";
-import { authService } from "../../services/authService";
+import { Alert, Button, Col, Form, Modal, Row } from "react-bootstrap";
 
 
 export const Login = ({
-  setUser,
-  setLoginError,
   loginError,
   login
 }) => {
