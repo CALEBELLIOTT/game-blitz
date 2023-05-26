@@ -1,21 +1,18 @@
 import React, { useState } from "react";
-import { Button, Col, Form, InputGroup, Modal, Row } from "react-bootstrap";
-import { auth } from "../../firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { Alert, Button, Col, Form, InputGroup, Modal, Row } from "react-bootstrap";
 import { authService } from "../../services/authService";
 
 
-export const Login = () => {
+export const Login = ({
+  setUser,
+  setLoginError,
+  loginError,
+  login
+}) => {
   const [modelOpen, setModalOpen] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
-  const [loginError, setLoginError] = useState('')
-
-
-  const login = () => {
-    authService.loginWithEmailAndPassword({ email, password })
-  }
 
   const renderModalBody = () => {
     return (
@@ -35,12 +32,15 @@ export const Login = () => {
                 <Form.Check type="checkbox" label="Show Password" checked={showPassword} onChange={() => setShowPassword(!showPassword)} />
               </Form.Group>
             </Form>
+            {loginError && loginError.message &&
+              <Alert variant="danger">Error: {loginError.message}</Alert>
+            }
           </Col>
         </Row>
         <Row>
           <Col md={6}>
             <div className="d-flex justify-content-center">
-              <Button variant="primary" onClick={login}>
+              <Button variant="primary" onClick={() => login({ email, password })}>
                 Login
               </Button>
             </div>

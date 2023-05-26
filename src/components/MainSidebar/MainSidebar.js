@@ -1,19 +1,16 @@
-import { useState, react } from "react"
-import { Col, Row } from "react-bootstrap"
 import './mainSidebar.css'
 import { SIDEBAR_ROUTES as sidebarRoutes } from '../../lib/enums'
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import { useNavigate, useLocation } from "react-router-dom";
 import React from "react";
-import { Login } from "../Login/Login";
+import Login from "../Login";
 
 
 
 const MainSidebar = () => {
     const navigate = useNavigate()
     const location = useLocation()
-    console.log(location, 'loc CE:TEST');
 
     const renderTooltip = ({ name }) => (
         <Tooltip>{name}</Tooltip>
@@ -22,7 +19,6 @@ const MainSidebar = () => {
     const renderListItem = ({ name, icon, id, route }) => {
         const { pathname } = location
         const isSelected = pathname === `/${route}`
-        console.log(isSelected, 'selected CE:TEST');
         return (
             <div key={id}>
                 <OverlayTrigger placement="right" overlay={renderTooltip({ name })}>
