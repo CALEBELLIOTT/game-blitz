@@ -1,5 +1,5 @@
 import { Outlet } from "react-router";
-import MainSidebar from "../../MainSidebar/MainSidebar"
+import MainSidebar from "../../components/MainSidebar/MainSidebar"
 import './MainLayout.css'
 import React from "react";
 

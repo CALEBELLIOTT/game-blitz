@@ -2,12 +2,11 @@ import React from "react";
 import {
   createBrowserRouter,
 } from "react-router-dom";
-import ErrorPage from "../components/pages/ErrorPage";
-import Dashboard from "../components/pages/Dashboard/Dashboard";
-import MainSidebar from "../components/MainSidebar/MainSidebar";
-import MainLayout from "../components/pages/MainLayout/MainLayout";
-import Account from "../components/pages/Account/Account";
-import Stocks from "../components/pages/Stocks/Stocks";
+import ErrorPage from "../pages/ErrorPage";
+import Dashboard from "../pages/Dashboard/Dashboard";
+import MainLayout from "../pages/MainLayout/MainLayout";
+import Account from "../pages/Account/Account";
+import Stocks from "../pages/Stocks/Stocks";
 
 const router = createBrowserRouter([
   {

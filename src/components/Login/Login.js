@@ -1,15 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Alert, Button, Col, Form, Modal, Row } from "react-bootstrap";
 
 
 export const Login = ({
   loginError,
-  login
+  login,
+  user
 }) => {
   const [modelOpen, setModalOpen] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
+
+  useEffect(() => {
+    if (user.uid) {
+      setModalOpen(false)
+    }
+  }, [user])
 
   const renderModalBody = () => {
     return (

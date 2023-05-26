@@ -1,6 +1,6 @@
 import React from "react"
 import { Col, Container, Row } from "react-bootstrap";
-import AccountSummary from "../../AccountSummary/AccountSummary";
+import AccountSummary from "../../components/AccountSummary/AccountSummary";
 import './Dashboard.css'
 
 const Dashboard = ({ ...props }) => {
