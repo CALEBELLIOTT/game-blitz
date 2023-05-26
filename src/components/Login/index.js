@@ -5,9 +5,9 @@ import {
 } from '../../selectors/users'
 import {
   setUser,
-  setLoginError,
+  // setLoginError,
   login
-} from '../../actions/userActions'
+} from '../../actions'
 import { Login } from "./Login"
 import { bindActionCreators } from "redux"
 
@@ -18,7 +18,7 @@ const stateToProps = state => ({
 
 const dispatchToProps = dispatch => bindActionCreators({
   setUser,
-  setLoginError,
+  // setLoginError,
   login
 }, dispatch);
 

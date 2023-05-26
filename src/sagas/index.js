@@ -1,8 +1,8 @@
 import { fork, all } from 'redux-saga/effects'
-import login from "./login"
+import loginSaga from "./login"
 
 const sagas = [
-  login
+  loginSaga
 ]
 
 export default function* root() {

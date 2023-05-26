@@ -1,27 +1,26 @@
 import { put, takeLatest } from "redux-saga/effects";
-import { LOGIN } from "../actions/types";
 import {
   setUser,
-  setLoginError,
-} from '../actions/userActions'
+  login
+} from '../actions/'
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 
-export function* login({ payload }) {
+export function* loginSaga({ payload }) {
+  console.log('hitting saga');
   try {
     const { email, password } = payload || {}
     const res = yield signInWithEmailAndPassword(auth, email, password)
     const { user } = res || {}
     yield put(setUser(user))
-    yield put(setLoginError({ error: false }))
   }
   catch (err) {
     console.log(err, 'login:error');
-    yield put(setLoginError({ error: true, message: err.message }))
+    yield put(login.error(err))
   }
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default function* () {
-  yield takeLatest(LOGIN, login)
+  yield takeLatest([login.type.PENDING], loginSaga)
 }

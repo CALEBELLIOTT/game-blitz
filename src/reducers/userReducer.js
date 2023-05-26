@@ -1,4 +1,5 @@
-import { SET_LOGIN_ERROR, SET_USER } from "../actions/types";
+// @ts-nocheck
+import { LOGIN_ASYNC, SET_USER } from "../actions/types";
 import { setLoginError, setUserData } from "../selectors/users";
 
 const initialState = {
@@ -10,5 +11,6 @@ const noop = type => () => {
 }
 export const userReducer = (state = initialState, { type, payload, error }) => ({
   [SET_USER]: () => setUserData(state, payload),
-  [SET_LOGIN_ERROR]: () => setLoginError(state, payload)
+  [LOGIN_ASYNC.ERROR]: () => setLoginError(state, payload),
+  [LOGIN_ASYNC.SUCCESS]: () => setLoginError(state, {})
 }[type] || noop(type))() || state;
