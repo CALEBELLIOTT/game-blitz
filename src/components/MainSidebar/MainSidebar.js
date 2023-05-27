@@ -45,10 +45,7 @@ const MainSidebar = () => {
     return (
         <div className="sidebar-main bg-light">
             <div className="upper-content-container d-flex justify-content-center py-3">
-                <h2 className="mx-auto">
-                    C
-                    <Login></Login>
-                </h2>
+                <Login></Login>
             </div>
             <div className="divider-line"></div>
             {sidebarRoutes.map(route => renderListItem(route))}
