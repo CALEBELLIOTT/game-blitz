@@ -1,9 +1,11 @@
 import { combineReducers } from "redux";
 import { userReducer } from "./userReducer";
+import { appReducer } from "./app";
 
 
 const rootReducer = combineReducers({
-  user: userReducer
+  app: appReducer,
+  user: userReducer,
 })
 
 export { rootReducer }

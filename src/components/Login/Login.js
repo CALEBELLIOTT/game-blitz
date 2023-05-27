@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Alert, Button, Col, Form, Modal, Row } from "react-bootstrap";
+import { Alert, Button, Col, Form, Modal, Row, Spinner } from "react-bootstrap";
 
 
 export const Login = ({
   loginError,
   login,
-  user
+  user,
+  inlineLoading
 }) => {
   const [modelOpen, setModalOpen] = useState(false)
   const [email, setEmail] = useState('')
@@ -17,6 +18,11 @@ export const Login = ({
       setModalOpen(false)
     }
   }, [user])
+
+  useEffect(() => {
+    setPassword('')
+    setEmail('')
+  }, [user, modelOpen])
 
   const renderModalBody = () => {
     return (
@@ -44,8 +50,15 @@ export const Login = ({
         <Row>
           <Col md={6}>
             <div className="d-flex justify-content-center">
-              <Button variant="primary" onClick={() => login({ email, password })}>
-                Login
+              <Button variant="primary" disabled={inlineLoading} onClick={() => login({ email, password })}>
+                {inlineLoading && <Spinner
+                  as="span"
+                  animation="border"
+                  size="sm"
+                  role="status"
+                  aria-hidden="true"
+                />}
+                <span> Login</span>
               </Button>
             </div>
           </Col>

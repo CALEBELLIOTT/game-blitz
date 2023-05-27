@@ -4,8 +4,10 @@ import {
   getLoginError
 } from '../../selectors/users'
 import {
+  getInlineLoading
+} from '../../selectors/app'
+import {
   setUser,
-  // setLoginError,
   login
 } from '../../actions'
 import { Login } from "./Login"
@@ -13,12 +15,12 @@ import { bindActionCreators } from "redux"
 
 const stateToProps = state => ({
   user: getUserData(state),
-  loginError: getLoginError(state)
+  loginError: getLoginError(state),
+  inlineLoading: getInlineLoading(state)
 });
 
 const dispatchToProps = dispatch => bindActionCreators({
   setUser,
-  // setLoginError,
   login
 }, dispatch);
 

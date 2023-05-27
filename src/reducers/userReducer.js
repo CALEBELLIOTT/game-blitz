@@ -7,10 +7,10 @@ const initialState = {
 };
 
 const noop = type => () => {
-  console.error(`no reducer for type ${type}`);
+  // console.error(`no reducer for type ${type}`);
 }
 export const userReducer = (state = initialState, { type, payload, error }) => ({
   [SET_USER]: () => setUserData(state, payload),
   [LOGIN_ASYNC.ERROR]: () => setLoginError(state, payload),
-  [LOGIN_ASYNC.SUCCESS]: () => setLoginError(state, {})
+  [LOGIN_ASYNC.SUCCESS]: () => setLoginError(state, false)
 }[type] || noop(type))() || state;

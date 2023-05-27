@@ -13,6 +13,8 @@ export const createAsyncAction = type => {
 
 // Sync Actions
 export const setUser = createAction(types.SET_USER)
+export const inlineLoading = createAction(types.INLINE_LOADING)
+export const loading = createAction(types.LOADING)
 
 // Async Actions
 export const login = createAsyncAction(types.LOGIN_ASYNC)
