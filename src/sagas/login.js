@@ -1,4 +1,4 @@
-import { put, takeLatest } from "redux-saga/effects";
+import { call, put, takeLatest } from "redux-saga/effects";
 import {
   setUser,
   login,
@@ -6,11 +6,15 @@ import {
 } from '../actions/'
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
+import { getUser } from "../api/graphql";
 
 export function* loginSaga({ payload }) {
   console.log('hitting saga');
   try {
-    yield put(inlineLoading(true))
+    const useryuh = yield getUser()
+    console.log(useryuh, 'user CE:TEST');
+
+    // yield put(inlineLoading(true))
     const { email, password } = payload || {}
     const res = yield signInWithEmailAndPassword(auth, email, password)
     const { user } = res || {}
