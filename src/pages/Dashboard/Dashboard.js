@@ -1,6 +1,6 @@
 import React from "react"
 import { Col, Container, Row } from "react-bootstrap";
-import AccountSummary from "../../components/AccountSummary/AccountSummary";
+import AccountSummary from "../../components/AccountSummary";
 import './Dashboard.css'
 
 const Dashboard = ({ ...props }) => {
@@ -10,7 +10,7 @@ const Dashboard = ({ ...props }) => {
       <Row >
         <Col md={12} className="text-light ml-5">
           <div className="mt-3 custom-margin-left">
-            <h4>Dashboard</h4>
+            <h4 className="mb-0">Dashboard</h4>
             <p>Visualize Your Finances</p>
           </div>
         </Col>

@@ -3,7 +3,7 @@ import {
   createBrowserRouter,
 } from "react-router-dom";
 import ErrorPage from "../pages/ErrorPage";
-import Dashboard from "../pages/Dashboard/Dashboard";
+import Dashboard from "../pages/Dashboard";
 import MainLayout from "../pages/MainLayout/MainLayout";
 import Account from "../pages/Account/Account";
 import Stocks from "../pages/Stocks/Stocks";

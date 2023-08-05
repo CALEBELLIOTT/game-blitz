@@ -1,0 +1,9 @@
+.cents-place {
+    font-size: .9rem;
+}
+
+.small-dot {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+}
