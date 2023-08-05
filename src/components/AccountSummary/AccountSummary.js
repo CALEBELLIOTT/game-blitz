@@ -1,5 +1,35 @@
 import { Col, ProgressBar, Row } from "react-bootstrap"
 import './AccountSummary.css'
+import React from 'react'
+import { convertCurrency } from "../../util/convertCurrency"
+
+const categories = [
+    {
+        name: 'Stocks',
+        percentage: 35,
+        total: 120000,
+        color: 'primary'
+    },
+    {
+        name: 'Real-Estate',
+        percentage: 35,
+        total: 120000,
+        color: 'secondary'
+    },
+    {
+        name: 'Cash',
+        percentage: 35,
+        total: 120000,
+        color: 'danger'
+    },
+    {
+        name: 'Other',
+        percentage: 35,
+        total: 120000,
+        color: 'success'
+    },
+]
+
 const AccountSummary = () => {
     return (
         <Row>
@@ -25,50 +55,19 @@ const AccountSummary = () => {
                             <ProgressBar variant="success" now={35} key={3} />
                         </ProgressBar>
                     </Col>
-                    <Col sm={3} className="mt-5">
-                        <div className="d-flex align-items-center">
-                            <div className="small-dot bg-primary" />
-                            <div className="ms-2">
-                                <p className="mb-0  text-muted">Stocks</p>
-                                <div className="d-flex">
-                                    <h4 className="mb-0">35%<span className="font-smaller mb-0 text-muted">($120,000)</span></h4>
+                    {categories.map(({ name, percentage, total, color }) => (
+                        <Col sm={3} className="mt-5" key={name}>
+                            <div className="d-flex align-items-center">
+                                <div className={`small-dot bg-${color}`} />
+                                <div className="ms-2">
+                                    <p className="mb-0  text-muted">{name}</p>
+                                    <div className="d-flex">
+                                        <h4 className="mb-0">{percentage}%<span className="font-smaller mb-0 text-muted">{`(${convertCurrency(total, false)})`}</span></h4>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </Col>
-                    <Col sm={3} className="mt-5">
-                        <div className="d-flex align-items-center">
-                            <div className="small-dot bg-secondary" />
-                            <div className="ms-2">
-                                <p className="mb-0  text-muted">Real-Estate</p>
-                                <div className="d-flex">
-                                    <h4 className="mb-0">20%<span className="font-smaller mb-0 text-muted">($72,000)</span></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </Col>
-                    <Col sm={3} className="mt-5">
-                        <div className="d-flex align-items-center">
-                            <div className="small-dot bg-danger" />
-                            <div className="ms-2">
-                                <p className="mb-0  text-muted">Cash</p>
-                                <div className="d-flex">
-                                    <h4 className="mb-0">10%<span className="font-smaller mb-0 text-muted">($15,000)</span></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </Col>
-                    <Col sm={3} className="mt-5">
-                        <div className="d-flex align-items-center">
-                            <div className="small-dot bg-success" />
-                            <div className="ms-2">
-                                <p className="mb-0  text-muted">Other</p>
-                                <div className="d-flex">
-                                    <h4 className="mb-0">35%<span className="font-smaller mb-0 text-muted">($120,000)</span></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </Col>
+                        </Col>
+                    ))}
                 </Row>
             </Col>
         </Row>
