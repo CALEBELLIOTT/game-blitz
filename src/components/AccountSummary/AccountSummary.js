@@ -7,7 +7,7 @@ const AccountSummary = () => {
                 <Row>
                     <Col md={6}>
                         <h4>Your Personal Value</h4>
-                        <h4 className="">$287,779<span className="text-primary cents-place">.92</span></h4>
+                        <h4 className="">$287,779<span className="text-primary font-smaller">.92</span></h4>
                     </Col>
                     <Col md={6}>
                         <h4 className="">
@@ -28,25 +28,45 @@ const AccountSummary = () => {
                     <Col sm={3} className="mt-5">
                         <div className="d-flex align-items-center">
                             <div className="small-dot bg-primary" />
-                            <p className="mb-0 ms-2">Stocks</p>
+                            <div className="ms-2">
+                                <p className="mb-0  text-muted">Stocks</p>
+                                <div className="d-flex">
+                                    <h4 className="mb-0">35%<span className="font-smaller mb-0 text-muted">($120,000)</span></h4>
+                                </div>
+                            </div>
                         </div>
                     </Col>
                     <Col sm={3} className="mt-5">
                         <div className="d-flex align-items-center">
                             <div className="small-dot bg-secondary" />
-                            <p className="mb-0 ms-2">Real-Estate</p>
+                            <div className="ms-2">
+                                <p className="mb-0  text-muted">Real-Estate</p>
+                                <div className="d-flex">
+                                    <h4 className="mb-0">20%<span className="font-smaller mb-0 text-muted">($72,000)</span></h4>
+                                </div>
+                            </div>
                         </div>
                     </Col>
                     <Col sm={3} className="mt-5">
                         <div className="d-flex align-items-center">
                             <div className="small-dot bg-danger" />
-                            <p className="mb-0 ms-2">Cash</p>
+                            <div className="ms-2">
+                                <p className="mb-0  text-muted">Cash</p>
+                                <div className="d-flex">
+                                    <h4 className="mb-0">10%<span className="font-smaller mb-0 text-muted">($15,000)</span></h4>
+                                </div>
+                            </div>
                         </div>
                     </Col>
                     <Col sm={3} className="mt-5">
                         <div className="d-flex align-items-center">
                             <div className="small-dot bg-success" />
-                            <p className="mb-0 ms-2">Other</p>
+                            <div className="ms-2">
+                                <p className="mb-0  text-muted">Other</p>
+                                <div className="d-flex">
+                                    <h4 className="mb-0">35%<span className="font-smaller mb-0 text-muted">($120,000)</span></h4>
+                                </div>
+                            </div>
                         </div>
                     </Col>
                 </Row>

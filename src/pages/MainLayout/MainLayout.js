@@ -10,7 +10,7 @@ const MainLayout = (props) => {
                 <div className="side-bar-container">
                     <MainSidebar />
                 </div>
-                <div className="outlet-container">
+                <div className="outlet-container p-4">
                     <Outlet />
                 </div>
             </div>

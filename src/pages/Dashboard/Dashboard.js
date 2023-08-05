@@ -9,7 +9,7 @@ const Dashboard = ({ ...props }) => {
       <div className="color-div" />
       <Row >
         <Col md={12} className="text-light ml-5">
-          <div className="mt-3 custom-margin-left">
+          <div className="mt-3">
             <h4 className="mb-0">Dashboard</h4>
             <p>Visualize Your Finances</p>
           </div>
@@ -19,7 +19,7 @@ const Dashboard = ({ ...props }) => {
         <Col md={8}>
           <Row>
             <Col md={12}>
-              <div className="custom-margin-left">
+              <div className="">
                 <AccountSummary />
               </div>
             </Col>
