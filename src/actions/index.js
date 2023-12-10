@@ -15,6 +15,7 @@ export const createAsyncAction = type => {
 export const setUser = createAction(types.SET_USER)
 export const inlineLoading = createAction(types.INLINE_LOADING)
 export const loading = createAction(types.LOADING)
+export const setIsGuest = createAction(types.SET_IS_GUEST)
 
 // Async Actions
 export const login = createAsyncAction(types.LOGIN_ASYNC)

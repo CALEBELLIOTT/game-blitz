@@ -19,6 +19,7 @@ export const SET_USER = "SET_USER";
 export const SET_LOGIN_ERROR = "SET_LOGIN_ERROR"
 export const INLINE_LOADING = "INLINE_LOADING"
 export const LOADING = "LOADING"
+export const SET_IS_GUEST = "SET_IS_GUEST"
 
 // Async Types
 export const LOGIN_ASYNC = createAsyncTypes('LOGIN')

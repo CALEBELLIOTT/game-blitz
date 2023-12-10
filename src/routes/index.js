@@ -3,10 +3,9 @@ import {
   createBrowserRouter,
 } from "react-router-dom";
 import ErrorPage from "../pages/ErrorPage";
-import Dashboard from "../pages/Dashboard";
 import MainLayout from "../pages/MainLayout/MainLayout";
 import Account from "../pages/Account/Account";
-import Stocks from "../pages/Stocks/Stocks";
+import Home from "../pages/Home";
 
 const router = createBrowserRouter([
   {
@@ -15,17 +14,13 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: 'dashboard',
-        element: <Dashboard />
+        path: '',
+        element: <Home />
       },
       {
         path: 'account',
         element: <Account />
       },
-      {
-        path: 'stocks',
-        element: <Stocks />
-      }
     ]
   },
 ]);

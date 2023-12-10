@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'scripto';
+    src: local('scripto'), url(./fonts/Scripto.ttf) format('truetype');
+    /* other formats include: 'woff2', 'truetype, 'opentype',
+                              'embedded-opentype', and 'svg' */
+}
+
 html {
     --color-primary: #640dd6;
     --color-light: #e6e6e6;
@@ -8,7 +15,15 @@ html {
     --color-success: #049428;
 }
 
-
 .selectable:hover {
     cursor: pointer;
+}
+
+.scripto {
+    font-family: 'scripto';
+}
+
+.caption {
+    font-size: 11px;
+
 }

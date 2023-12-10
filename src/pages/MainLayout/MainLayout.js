@@ -7,10 +7,7 @@ const MainLayout = (props) => {
     return (
         <>
             <div className="d-flex">
-                <div className="side-bar-container">
-                    <MainSidebar />
-                </div>
-                <div className="outlet-container p-4">
+                <div className="outlet-container">
                     <Outlet />
                 </div>
             </div>
