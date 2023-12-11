@@ -2,6 +2,7 @@ import React from "react"
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap"
 import './Home.css'
 import Login from "../../components/Login"
+import { Link } from "react-router-dom"
 
 const Home = ({ isGuest, setIsGuest }) => {
   console.log(isGuest, 'is guest CE:TEST');
@@ -28,9 +29,11 @@ const Home = ({ isGuest, setIsGuest }) => {
                   Submit
                 </Button>
                 <p className="m-0 caption text-muted mt-2">or</p>
-                <p
-                  className="text-primary m-0 selectable"
-                  onClick={() => setIsGuest(true)}>Open a new Room</p>
+                <Link to={'/new-room'}>
+                  <p
+                    className="text-primary m-0 selectable"
+                    onClick={() => { }}>Open a new Room</p>
+                </Link>
               </div>}
           </div>
         </Col>

@@ -27,3 +27,7 @@ html {
     font-size: 11px;
 
 }
+
+.min-100-vh {
+    min-height: 100vh;
+}
